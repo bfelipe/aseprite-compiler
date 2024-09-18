@@ -1,0 +1,7 @@
+services:
+  aseprite-compiler:
+    build:
+      context: .
+      args:
+        SKIA_ZIP_URL: https://github.com/aseprite/skia/releases/download/m102-861e4743af/Skia-Linux-Release-x64-libc++.zip
+        ASEPRITE_ZIP_URL: https://github.com/aseprite/aseprite/releases/download/v1.3.8.1/Aseprite-v1.3.8.1-Source.zip
