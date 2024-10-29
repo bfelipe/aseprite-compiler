@@ -14,7 +14,7 @@ clean-container:
 	docker compose rm aseprite-compiler
 
 clean-image:
-	docker image rm docker-aseprite-aseprite-compiler && docker image prune
+	docker image rm $$(docker image ls --format '{{.Repository}}' | grep aseprite) && docker image prune
 
 clean-binary:
 	rm -r aseprite/
