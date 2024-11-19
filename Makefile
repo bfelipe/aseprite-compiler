@@ -10,6 +10,9 @@ container-up:
 copy-binary:
 	docker cp $(shell docker ps -a --filter "name=aseprite-compiler" --format "{{.ID}}"):/aseprite/build/bin/. ./aseprite
 
+install-dependencies:
+	sudo apt install libc++-dev libc++abi-dev -y
+
 clean-container:
 	docker compose rm aseprite-compiler
 
@@ -29,5 +32,6 @@ install:
 	make build-image
 	make container-up
 	make copy-binary
+	make install-dependencies
 	make clean-container
 	make clean-image
