@@ -19,10 +19,10 @@ RUN wget $SKIA_ZIP_URL && \
     unzip Skia-Linux-Release-x64-libc++.zip -d /skia && \
     rm Skia-Linux-Release-x64-libc++.zip
 
-RUN wget $ASEPRITE_ZIP_URL && \
+RUN wget -O Aseprite-Source.zip $ASEPRITE_ZIP_URL && \
     mkdir aseprite && \
-    unzip Aseprite-v1.3.8.1-Source.zip -d /aseprite && \
-    rm Aseprite-v1.3.8.1-Source.zip
+    unzip Aseprite-Source.zip -d /aseprite && \
+    rm Aseprite-Source.zip
 
 RUN mkdir /aseprite/build
 
