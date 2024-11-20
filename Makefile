@@ -22,6 +22,11 @@ clean-image:
 clean-binary:
 	rm -r aseprite/
 
+add-shortcut:
+	sed -i "s|Exec=path|Exec=$$(pwd)/aseprite|; s|Icon=path|Icon=$$(pwd)/icon.png|" aseprite.desktop
+	@chmod +x aseprite.desktop
+	@cp aseprite.desktop ~/.local/share/applications/
+
 reset:
 	make clean-container
 	make clean-image
@@ -35,8 +40,4 @@ install:
 	make install-dependencies
 	make clean-container
 	make clean-image
-
-add-shortcut:
-	sed -i "s|Exec=path|Exec=$$(pwd)/aseprite|; s|Icon=path|Icon=$$(pwd)/icon.png|" aseprite.desktop
-	@chmod +x aseprite.desktop
-	@cp aseprite.desktop ~/.local/share/applications/
+	add-shortcut
