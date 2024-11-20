@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Aseprite
+Exec=path/aseprite
+Icon=path
+Terminal=false
+Categories=Graphics;
